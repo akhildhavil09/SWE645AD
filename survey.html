@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded shadow">
+        <h1 class="text-2xl mb-6">Student Survey Form</h1>
+        <form>
+            <!-- Personal Information -->
+            <input type="text" placeholder="First Name" required class="w-full mb-4 p-2 border rounded">
+            <input type="text" placeholder="Last Name" required class="w-full mb-4 p-2 border rounded">
+            <input type="text" placeholder="Street Address" required class="w-full mb-4 p-2 border rounded">
+            <div class="grid grid-cols-2 gap-4 mb-4">
+                <input type="text" placeholder="City" required class="p-2 border rounded">
+                <input type="text" placeholder="State" required class="p-2 border rounded">
+            </div>
+            <input type="tel" placeholder="Phone Number" required class="w-full mb-4 p-2 border rounded">
+            <input type="email" placeholder="Email" required class="w-full mb-4 p-2 border rounded">
+            
+            <!-- Campus Features -->
+            <p class="mb-2">What did you like about the campus?</p>
+            <div class="mb-4">
+                <label class="block"><input type="checkbox" class="mr-2">Students</label>
+                <label class="block"><input type="checkbox" class="mr-2">Location</label>
+                <label class="block"><input type="checkbox" class="mr-2">Campus</label>
+                <label class="block"><input type="checkbox" class="mr-2">Atmosphere</label>
+                <label class="block"><input type="checkbox" class="mr-2">Dorm Rooms</label>
+                <label class="block"><input type="checkbox" class="mr-2">Sports</label>
+            </div>
+
+            <!-- Interest Source -->
+            <p class="mb-2">How did you become interested in the university?</p>
+            <div class="mb-4">
+                <label class="block"><input type="radio" name="interest" class="mr-2">Friends</label>
+                <label class="block"><input type="radio" name="interest" class="mr-2">Television</label>
+                <label class="block"><input type="radio" name="interest" class="mr-2">Internet</label>
+                <label class="block"><input type="radio" name="interest" class="mr-2">Other</label>
+            </div>
+
+            <!-- Recommendation Likelihood -->
+            <select class="w-full mb-4 p-2 border rounded">
+                <option value="">Likelihood of recommending this school</option>
+                <option value="very_likely">Very Likely</option>
+                <option value="likely">Likely</option>
+                <option value="unlikely">Unlikely</option>
+            </select>
+
+            <input type="text" placeholder="Raffle (comma-separated numbers)" class="w-full mb-4 p-2 border rounded">
+            <textarea placeholder="Additional Comments" class="w-full mb-4 p-2 border rounded"></textarea>
+
+            <div class="flex gap-4">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
+                <button type="reset" class="bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
