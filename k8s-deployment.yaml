@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swe645-webapp
+  labels:
+    app: swe645-webapp
+spec:
+  replicas: 3  # Maintain at least 3 pods as required
+  selector:
+    matchLabels:
+      app: swe645-webapp
+  template:
+    metadata:
+      labels:
+        app: swe645-webapp
+    spec:
+      containers:
+      - name: swe645-webapp
+        image: akhild9/swe645-webapp:latest
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 15
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 30
